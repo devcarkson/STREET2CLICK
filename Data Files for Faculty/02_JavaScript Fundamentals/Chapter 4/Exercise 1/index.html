@@ -1,0 +1,104 @@
+<html>
+<head>
+<title>Welcome to Fast Mail</title>
+<SCRIPT>
+
+function setCookieValue()
+{
+var date = new Date();
+date.setTime(date.getTime()+(24*60*60*1000));
+var expires = "expires="+date.toGMTString();
+document.cookie ="User="+document.loginform.Email.value+";"+expires+";path=/"
+document.cookie ="Username="+document.loginform.Email.value+";"+expires+";path=/"
+document.cookie ="Password="+document.loginform.Passwd.value+";"+expires+";path=/"
+}
+
+function getCookieValue(name) {
+var nameEQ = name + "=";
+var ca = document.cookie.split(';');
+for(var i=0;i < ca.length;i++)
+ {
+   var c = ca[i];
+   while (c.charAt(0)==' ') c = c.substring(1,c.length);
+   if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+ }
+ return null;
+}
+function deleteCookieValue()
+{
+var date = new Date();
+date.setTime(date.getTime());
+var expires = "expires="+date.toGMTString();
+document.cookie ="Username='';"+expires+";path=/"
+document.cookie ="Password='';"+expires+";path=/"
+
+}
+function validate()
+{
+
+        if(document.loginform.Email.value == "")
+	{
+	   alert("Please enter the Username","");
+           document.loginform.Email.focus();
+           return false; 
+        }  
+	if(document.loginform.Passwd.value == "")
+	{
+	   alert("Please enter the Password","");
+	   document.loginform.Passwd.focus();
+           return false; 
+	}
+        setCookieValue();
+        if(!document.loginform.remember.checked)
+        { 
+            deleteCookieValue(); 
+        }        
+        return true;        
+}
+function readCookie()
+{
+  var Username=getCookieValue("Username");
+  var Password=getCookieValue("Password");
+  if(Username!=null && Password!=null)
+  {
+    document.loginform.Email.value = Username;
+    document.loginform.Passwd.value = Password; 
+  }
+}
+
+</SCRIPT>
+</head>
+
+<body bgcolor="lightyellow" onLoad="readCookie()">
+<h2>Welcome to Fast Mail</h2>
+<form name="loginform" id="loginform" action="welcome.html" method="post" onSubmit="return validate()">
+<table cellspacing="3" cellpadding="5" width="100%" border="0">
+  <tr>
+  	<td valign="top" ColSpan="2" bgcolor="#e8eefa">Sign in to Fast Mail Account</td>
+  </tr>
+  <tr>
+  	<td align="right">Username:</td>
+  	<td><input type="text"name="Email"id="Email"/></td>
+  </tr>
+  <tr>
+  	<td align="right">Password:</td>
+  	<td><input type="password" name="Passwd" id="Passwd"/></td>
+  </tr>
+  <tr>
+  	<td align="right">
+    	<input type="checkbox" name="remember" id="remember"/>
+	</td>
+    	<td> Remember me on this computer.</td>
+  </tr>
+  <tr>
+        <td></td>
+        <td><input type="submit" name="signIn"value="Sign in" /></td>
+  </tr>
+  <tr>
+        <td align="right"> New User?</td>
+        <td><a href="Registration.html">click here</a></td>
+  </tr>
+</table>
+</form>
+</body>
+</html>

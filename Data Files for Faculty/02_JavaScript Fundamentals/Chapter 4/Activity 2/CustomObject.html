@@ -1,0 +1,57 @@
+<HTML>
+<HEAD>
+<TITLE> Book Information </TITLE>
+<SCRIPT LANGUAGE="JavaScript">
+function book_details()
+{
+var result="<HTML><BODY><CENTER><TABLE BORDER=2>"
+result=result+"<CAPTION> <ALIGN=TOP> BOOK NAME: <B>" + this.name + "</B> </CAPTION>"  
+result=result+"<TR> <TD ALIGN=RIGHT> AUTHOR: </TD> <TD>" + this.author + "</TD> </TR>"
+result=result+"<TR> <TD ALIGN=RIGHT> PRICE: </TD> <TD>" + this.price + "</TD> </TR>"
+result=result+"<TR> <TD ALIGN=RIGHT> PUBLISHER: </TD> <TD>" + this.publisher + "</TD> </TR>"
+result= result + "</TABLE></CENTER></BODY></HTML>"
+
+parent.Frame2.document.write(result)
+parent.Frame2.document.close()
+}
+
+function book (name, author, price, publisher)
+{
+this.name=name
+this.author=author
+this.price=price
+this.publisher=publisher
+this.book_details=book_details
+}
+
+C=new book("Learning C", "Smith Robinson", "$100", "Esteem Publication")
+Java=new book("Advance Java Programming", "Gloria Anniston", "$120", "IT Publication")
+Perl=new book("Perl Fundamentals", "Andrew Gillespie", "$80", "Esteem Publication")
+</SCRIPT>
+
+<BODY>
+<H1> Fun&Fantasy Books Inc.</H1>
+<HR>
+<FORM NAME="myForm">
+<SCRIPT LANGUAGE="JavaScript">
+
+var page=""
+page=page+" Select a book of your choice:"
+page=page+"<SELECT NAME='books' onChange='doDisplay(this)'>"
+page=page+"<OPTION> C"
+page=page+"<OPTION> Java"
+page=page+"<OPTION> Perl"
+document.write(page)
+
+</SCRIPT>
+</FORM>
+<SCRIPT LANGUAGE="JavaScript">
+function doDisplay(popup)
+{
+i=popup.selectedIndex 
+eval(popup.options[i].text + ".book_details()")
+}
+doDisplay(document.forms[0].books)
+</SCRIPT>
+</BODY>
+</HTML>

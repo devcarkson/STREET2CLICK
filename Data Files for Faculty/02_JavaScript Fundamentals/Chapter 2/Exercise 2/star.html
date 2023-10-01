@@ -1,0 +1,82 @@
+<HTML>
+<HEAD><TITLE>DEMO </TITLE></HEAD>
+<BODY>
+<SCRIPT LANGUAGE="JavaScript">
+var Text = new Array ("With over 90 offices all over the world!", "SEI-CMM Level 5", "Over 15000 workforce in 90 countries","StarMoon Technologies", "A dream come true");
+var Width = 390; // width of the message box
+var Height  = 50; // height of the message box
+var BorderWidth=3; // border width
+var BorderColor="#CC0000"; // border Color
+var Timedelay=150; // delay in milliseconds
+
+
+document.write('<table Width="' + Width + '" height="' + Height  + '" style="background:#FFFFFF; border:' + BorderWidth + ' solid ' + BorderColor + '"><tr><td align="middle">');
+document.write('<div id="msgSpace">');
+document.write('</div>');
+document.write('</td></tr></table>');
+var mD10='A',mD11='B',mD12='C',mD13='D',mD14='E',mD15='F';
+var ColorValue=15;
+var DivCount=0;
+function TextFade(ColorValue)
+{
+ var RVal;
+ if(ColorValue>=10)
+ {
+  for(var i=0; i<=15; i++)
+  {
+   if((ColorValue==i))
+   {
+    RVal = eval('mD' + i);
+   }
+  }
+ }
+ else
+ {
+  RVal=ColorValue;
+ }
+ return(RVal);
+} 
+
+
+function WriteMessage()
+{
+ document.all.msgSpace.innerHTML= '<font face="verdana,arial,helvetica" size="-1" color="' +  AddColor(TextFade(ColorValue)) + '"><b>' + Text[DivCount] + '</span></b></font>' ;
+
+ if((ColorValue>0)  && (ColorValue!=0))
+ {
+  ColorValue--;
+ }
+ else
+ {
+  ColorValue=15;
+  if(DivCount<Text.length)
+  {
+   DivCount++;
+  }
+  if(DivCount==Text.length)
+  {
+   document.all.msgSpace.innerHTML = '<a href="javascript:ResetColor();WriteMessage();" style="text-decoration:none" accesskey="l"><font color="#808080" face="verdana,arial,helvetica" size="-1"><B>StarMoon Technologies<B>... <font face="monotype corsiva" size="-1" color="red">A dream come true</font> <I><font color="#CC0000"></font></b></font></a>';
+  }
+ }
+ if(DivCount<Text.length)
+ {
+  setTimeout("WriteMessage()",Timedelay);
+ }
+}
+
+function AddColor(Color)
+{
+ return (Color + '0' + Color + '0' + Color + '0');
+}
+
+function ResetColor()
+{
+ DivCount=0;
+ ColorValue=15;
+}
+
+WriteMessage();
+
+</SCRIPT>
+</BODY>
+<HTML>

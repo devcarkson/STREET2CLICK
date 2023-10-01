@@ -1,0 +1,62 @@
+<HTML>
+  <HEAD>
+  <SCRIPT LANGUAGE="JavaScript">
+ 	var d=new Date()
+var weekday=new    Array("Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday")
+var monthname=new  Array("Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec")
+document.write("Today's date:")
+document.write(weekday[d.getDay()] + " ")
+document.write(d.getDate()+ " ")
+document.write(monthname[d.getMonth()] + " ")
+document.write(d.getFullYear())
+  </SCRIPT>
+   
+<BODY>
+ 	 <SCRIPT LANGUAGE="JavaScript">
+    today=new Date()
+     nextXmas= new Date("December 25, 2004")
+     nextXmas.setYear(today.getYear())
+     msPerDay=24*60*60*1000
+     daysLeft=(nextXmas.getTime()-today.getTime())/msPerDay
+     daysLeft=Math.round(daysLeft)
+  document.write("<BR>" + "Number of days left for the event is:" + daysLeft)
+if (daysLeft >=15)
+document.write("<BR>" + "Keep patience! It's a long way to go")
+
+</SCRIPT>
+</BODY>
+
+<BODY>
+<SCRIPT Language="JavaScript">
+function put()
+{
+combooption=document.forms[0].dropdown.options[document.forms[0].dropdown.selectedIndex].text
+txt=combooption
+document.forms[0].favorite.value=txt
+}
+</SCRIPT>
+</BODY>
+
+<BODY>
+<FORM NAME="myForm" method=POST ACTION="message.html">
+<P>
+<BR> <BR>
+<CENTER> <H3> TICKET BOOKING FORM </H3> <CENTER>
+
+Ticket Category:
+<SELECT name="dropdown" onchange="put()">
+<OPTION>$50
+<OPTION>$100
+</SELECT>
+</P><P>
+Your Name:
+<INPUT type="text" name="name">
+<BR>Your Address:
+<INPUT type="text" name="address">
+<BR>
+<INPUT type="Submit" value="Submit">
+</P>
+</FORM>
+</BODY>
+</HEAD>
+</HTML>

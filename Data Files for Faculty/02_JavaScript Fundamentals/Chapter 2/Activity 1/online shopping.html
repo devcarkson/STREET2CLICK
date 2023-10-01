@@ -1,0 +1,34 @@
+<HTML>
+<HEAD>
+<SCRIPT LANGUAGE="JavaScript">
+function closeWin(popup_new) 
+{
+popup_new.close();			// closes the pop up window
+}
+function popupwin_Prop(popup_text) 
+{
+popup_new = window.open('','newWin','width=300,height=100');
+popup_new.document.write(popup_text);
+setTimeout('closeWin(popup_new)', 5000);// add a delay of five //seconds before opening the pop-up window
+}
+function Adver_popup() // opens the pop up window
+{
+popup_text = "<HTML>\n<HEAD>\n<TITLE>Online Shopping... Feel the difference</TITLE>\n<BODY>\n";
+popup_text = popup_text + "<CENTER>\n<BR>";
+popup_text = popup_text + "<BODY bgcolor='aquamarine'>";
+popup_text = popup_text + "<FONT COLOR='RED'> <P align='CENTER'> <h2>Market Online...Enjoy</h2></P></FONT>";
+popup_text = popup_text + "</CENTER>\n</BODY>\n</HTML>\n";
+setTimeout('popupwin_Prop(popup_text)', 5000); 		// add a delay of five seconds before opening the pop-up window
+}
+document.bgColor = "#CCFFFF" // specifies the background color //of the home page
+document.write(navigator.appName)// displays information about //the current browser
+</SCRIPT>
+</HEAD>
+<BODY onLoad="Adver_popup()">
+<P>
+<CENTER>
+<font face="comic sans, century gothic" size"-3">
+<B>Market Online<B><BR>
+</CENTER>
+<P>
+</HTML>

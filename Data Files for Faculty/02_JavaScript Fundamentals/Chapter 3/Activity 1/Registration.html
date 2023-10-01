@@ -1,0 +1,175 @@
+<HTML>
+<HEAD>
+<TITLE>Job Seekers Registration Form</TITLE>
+
+<!-This is the First Validation -->
+
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+function validate(){
+submitOK="True"
+x=document.form1
+name1=x.uname.value
+if (name1.length==0)
+ {
+ alert("The username field cannot remain blank.")
+ submitOK="False"
+ }
+ else if (name1.length>20) {
+  alert("The username cannot exceed 20 characters.")
+ submitOK="False"
+ }
+Fname2=x.fname.value
+if (Fname2.length==0)
+ {
+ alert("This First Name field cannot remain blank.")
+ submitOK="False"
+ }
+Lname3=x.lname.value
+if (Lname3.length==0)
+ {
+ alert("This Last Name field cannot remain blank.")
+ submitOK="False"
+ }
+Phonenum=x.phone.value
+if (Phonenum.length==0)
+ {
+ alert("This Phone number field cannot remain blank.")
+ submitOK="False"
+ }
+skills=x.keyskills.value
+if (skills.length==0)
+ {
+ alert("This Key skills field cannot remain blank.")
+ submitOK="False"
+ }
+// This is the Second Validation 
+password=x.pwd.value
+if (password.length==0)
+ {
+ alert("This Password field cannot remain blank.")
+ submitOK="False"
+ }
+verifypassword=x.pwd1.value
+if (verifypassword.length==0)
+ {
+ alert("This Re-enter the Password field cannot remain blank. ")
+ submitOK="False"
+ }
+if (password!=verifypassword)
+{
+ alert("Password and Re-enter password fields do not match!")
+ submitOK="False"
+}
+
+// This is the Third Validation 
+
+Experience=x.exp.value
+if (Experience<=1 || Experience>20)
+ {
+ alert("Experience cannot be less than 1 years and not more than 20 years")
+ submitOK="False"
+ }
+
+// This is the Fourth Validation 
+emailattherate=x.email.value.indexOf("@")
+if (emailattherate==-1) 
+ {
+ alert("Invalid E-mail")
+ submitOK="False"
+ }
+if (submitOK=="False") 
+ {
+return false
+ }
+}
+-->
+</SCRIPT>
+</HEAD>
+<BODY BGCOLOR="FFFFCC">
+<CENTER><H1><I><FONT COLOR="MAROON">Watch Perfect Inc.</FONT></I></H1></CENTER>
+<CENTER><H2>Job Seekers Registration Form</H2></CENTER>
+<BR>
+<FORM NAME="form1" action="thanks.html" onSubmit="return validate()">
+<TABLE ALIGN="center">
+<TR>
+<TD><H3>LOGIN DETAILS</H3></TD></TR>
+<TR>
+<TD>Username:</TD><TD><INPUT TYPE="text" NAME="uname"></TD>
+<TD>Password: </TD><TD><INPUT TYPE="password" NAME="pwd"></TD></TR>
+<TR><TD>&nbsp;</TD>
+<TD>&nbsp;</TD>
+<TD>Re-enter Password: </TD><TD><INPUT TYPE="password" NAME="pwd1"></TD>
+</TR>
+<TR>
+<TD><H3>PERSONAL DETAILS</H3></TD></TR>
+<TR>
+<TD>First Name:</TD><TD><INPUT TYPE="text" NAME="fname"></TD>
+<TD>Last Name:</TD><TD><INPUT TYPE="text" NAME="lname"></TD>
+</TR>
+<TR>
+<TD>E-mail Address:</TD><TD><INPUT TYPE="text" NAME="email"></TD>
+<TD>Gender:</TD>
+<TD><SELECT NAME="gender">
+<OPTION>Male</OPTION>
+<OPTION>Female</OPTION>
+</SELECT>
+</TD>
+</TR>
+<TR><TD>Phone Number:</TD><TD><INPUT TYPE="text" NAME="phone"></TD>
+<TD>Preferred Job Location:</TD>
+<TD><SELECT NAME="jlocation">
+<OPTION>California</OPTION>
+<OPTION>New Jersey</OPTION>
+<OPTION>Detroit</OPTION>
+<OPTION>Toronto</OPTION>
+<OPTION>Washington D.C.</OPTION>
+<OPTION>New York</OPTION>
+<OPTION>Arizona</OPTION>
+</SELECT>
+</TD>
+</TR>
+<TR>
+<TR><TD><H3>PROFESSIONAL DETAILS</H3></TD></TR>
+<TD>Experience(in years):</TD><TD><INPUT TYPE="text" NAME="exp"></TD>
+<TD>Key Skills:</TD><TD><INPUT TYPE="text" NAME="keyskills"></TD></TR>
+<TR><TD>Job Category:</TD>
+<TD><SELECT NAME="category">
+<OPTION>Computers</OPTION>
+<OPTION>Accounts</OPTION>
+<OPTION>Management</OPTION>
+<OPTION>Human Resource</OPTION>
+<OPTION>Others</OPTION>
+</SELECT>
+</TD>
+</TR>
+<TR><TD><H3>QUALIFICATIONS</H3></TD></TR>
+<TR>
+<TD>Degree held:</TD>
+<TD><SELECT NAME="degree">
+<OPTION>Masters</OPTION>
+<OPTION>Graduate</OPTION>
+<OPTION>Diploma</OPTION>
+<OPTION>Docterate</OPTION>
+<OPTION>Others</OPTION>
+</SELECT>
+</TD>
+</TR>
+<TR><TD>Specialization:</TD>
+<TD><SELECT NAME="specialization">
+<OPTION>Computers</OPTION>
+<OPTION>Engineering</OPTION>
+<OPTION>Management</OPTION>
+<OPTION>Human Resource</OPTION>
+<OPTION>Others</OPTION>
+</SELECT>
+</TD></TR>
+</TABLE>
+<BR>
+<CENTER><INPUT TYPE="submit" VALUE="Submit">&nbsp;
+<INPUT TYPE="reset" VALUE="Reset">
+</CENTER>
+</TABLE>
+</FORM>
+</BODY>
+</HTML>

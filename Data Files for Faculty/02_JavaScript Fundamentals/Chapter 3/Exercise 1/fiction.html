@@ -1,0 +1,89 @@
+<html>
+<head>
+<title>New Tech Book Store</title>
+<SCRIPT LANGUAGE= "JavaScript">
+<!--
+function BookDetails(i)
+{
+  detail_text="<HTML><HEAD><TITLE>Book Details</TITLE><BODY>\n";
+  switch(i)
+  {
+     case 1:     
+     detail_text=detail_text+"<CENTER>\n<h3>Dance With the Dragon</h3>\n";
+     detail_text=detail_text+"<Table><tr><td><b>Auther:</b></td><td>David Hagberg</td></tr>\n";
+     detail_text=detail_text+"<tr><td><b>Price:</b></td><td>$16.47</td></tr></table>\n";
+     break;
+     
+     case 2:     
+     detail_text=detail_text+"<CENTER>\n<h3>The Accidental Time Machine</h3>\n";
+     detail_text=detail_text+"<Table><tr><td><b>Auther:</b></td><td>Joe Haldeman</td></tr>\n";
+     detail_text=detail_text+"<tr><td><b>Price:</td><td>$15.29</td></tr></table>\n";
+     break;
+     
+     case 3:     
+     detail_text=detail_text+"<CENTER>\n<h3>A Lick of Frost</h3>\n";
+ detail_text=detail_text+"<Table><tr><td><b>Auther:</b></td><td>Laurell K Hamilton </td></tr>\n";
+     detail_text=detail_text+"<tr><td><b>Price:</td><td>$14.50</td></tr></table>\n";
+     break;  	     	 
+
+     case 4:     
+     detail_text=detail_text+"<CENTER>\n<h3>Tunnel Through the Deeps</h3>\n";
+detail_text=detail_text+"<Table><tr><td><b>Auther:</b></td><td>Harry Harrison</td></tr>\n";
+     detail_text=detail_text+"<tr><td><b>Price:</b></td><td>$23.10</td></tr></table>\n";
+     break;  	     	 
+     
+     case 5:     
+     detail_text=detail_text+"<CENTER>\n<h3>The Man Who Sold the Moon</h3>\n";
+detail_text=detail_text+"<Table><tr><td><b>Auther:</b></td><td>Robert Heinlein</td></tr>\n";
+     detail_text=detail_text+"<tr><td><b>Price:</b></td><td>$16.10</td></tr></table>\n";
+     break;  	     	 
+
+     default:
+     break;       
+  }
+  detail_text=detail_text+"</body></HTML>";
+  detail_win=window.open('','BookDetail','width=300,height=100');
+  detail_win.document.write(detail_text); 
+
+}
+//-->
+</SCRIPT>
+
+</head>
+<body>
+<h2><Font color= blue>The best fiction books</font></h3> 
+<table border="1" cellpadding="0" cellspacing="0" width="60%">
+  <tr>
+    <td width="20%"><b>S. No.</b></td>
+    <td width="60%"><b>Book Title</b></td>
+    <td width="20%"><b>Details</b></td>
+  </tr>
+  <tr>
+    <td width="20%">1.</td>
+    <td width="60%">Dance With the Dragon</td>
+    <td width="20%"><input type="button" value="Click" onClick="BookDetails(1)"></td>
+  </tr>
+  <tr>
+    <td width="20%">2.</td>
+    <td width="60%">The Accidental Time Machine</td>
+    <td width="20%"><input type="button" value="Click" onClick="BookDetails(2)"></td>
+  </tr>
+  <tr>
+    <td width="20%">3.</td>
+    <td width="60%">A Lick of Frost</td>
+    <td width="20%"><input type="button" value="Click" onClick="BookDetails(3)"></td>
+  </tr>
+  <tr>
+    <td width="20%">4.</td>
+    <td width="60%">Tunnel Through the Deeps</td>
+    <td width="20%"><input type="button" value="Click" onClick="BookDetails(4)"></td>
+  </tr>
+
+  <tr>
+    <td width="20%">5.</td>
+    <td width="60%">The Man Who Sold the Moon</td>
+    <td width="20%"><input type="button" value="Click" onClick="BookDetails(5)"></td>
+  </tr>
+</table>
+</body>
+</html>

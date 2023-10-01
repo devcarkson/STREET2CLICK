@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<RESERVATION><FROM>NY</FROM>
+<TO>Chicago</TO>
+<FARE>200</FARE>
+<DATE>2001-03-29</DATE>
+<CLASS>Executive</CLASS>
+</RESERVATION>

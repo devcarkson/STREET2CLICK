@@ -1,0 +1,32 @@
+<HTML>
+<HEAD>
+<SCRIPT LANGUAGE= "JavaScript">
+<!--
+function rotate1()
+{
+	
+   document.images[0].src="Image/TitleImage1.jpg"
+   setTimeout("rotate2()",3000);
+
+}
+function rotate2()
+{
+	
+   document.images[0].src="Image/TitleImage2.jpg"
+   setTimeout("rotate3()",3000);
+
+}
+function rotate3()
+{
+	
+   document.images[0].src="Image/TitleImage3.jpg"
+   setTimeout("rotate1()",3000);
+
+}
+//-->
+</SCRIPT>
+</HEAD>
+<Body bgcolor=yellow onLoad="rotate1()">
+<H1><IMG SRC="Image/TitleImage1" ALIGN="LEFT"  WIDTH="100" HEIGHT="50"><Center>New Tech Book Store</Center></H1>
+</Body>
+</HTML>

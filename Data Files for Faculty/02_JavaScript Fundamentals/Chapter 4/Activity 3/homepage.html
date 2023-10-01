@@ -1,0 +1,62 @@
+<HTML>
+<HEAD>
+<SCRIPT>
+function setCookie(name, value, expires, path, domain, secure)
+{
+  var thisCookie = name + "=" + escape(value) +
+      ((expires) ? "; expires=" + expires.toGMTString() : "") +
+      ((path) ? "; path=" + path : "") +
+      ((domain) ? "; domain=" + domain : "") +
+      ((secure) ? "; secure" : "");
+  document.cookie = thisCookie;
+  document.myForm1.submit();
+}
+
+
+function GetCookie_name (c_name) 
+{
+  var c_arg = c_name + "=";
+  var c_alen = c_arg.length;
+  var c_len = document.cookie.length;
+  var x = 0;
+  var myCookievalue;
+  while (x < c_alen) 
+  {
+    var y = x + c_alen;
+    if (document.cookie.substring(x, y) == c_arg)
+		myCookievalue=GetCookie_val(y);
+	  document.myForm1.myTextbox.value=myCookievalue
+      return myCookievalue;
+    x = document.cookie.indexOf(" ", x) + 1;
+    if (x == 0) break; 
+  }
+  return null;
+}
+
+function GetCookie_val (offset) 
+{
+  var c_endstr = document.cookie.indexOf (";", offset);
+  if (c_endstr == -1)
+    c_endstr = document.cookie.length;
+  return unescape(document.cookie.substring(offset, c_endstr));
+}
+
+var time_now= new Date();
+time_now.setTime(time_now.getTime() + 365 * 24 * 60 * 60 * 1000);
+</SCRIPT>
+</HEAD>
+<BODY onLoad='GetCookie_name("FAQ")'>
+<H1 align="center">Welcome to BeautyInFitness, Inc.</H1>
+<P align="left">&nbsp;</P>
+<P align="left">Click the links given below to see the information about the 
+product:</P>
+<P><A HREF="product_1.htm">Sunscreen Lotion</A></P>
+<P><A HREF="product_2.htm">Talcum Powder</A></P>
+<P><A HREF="product_3.htm">Perfume</A></P>
+<FORM METHOD="POST" NAME="myForm1" ACTION="thanks.html" onSubmit='setCookie("FAQ",myTextbox.value,time_now)';>
+   FAQ&nbsp;&nbsp;&nbsp; <INPUT TYPE="text" NAME="myTextbox" SIZE="48"></p>
+  <P><INPUT type="submit" VALUE="Submit" NAME="c_B1">&nbsp;&nbsp;&nbsp;
+  <INPUT TYPE="reset" VALUE="Reset" NAME="c_B2"></P>
+</FORM>
+</BODY>
+</HTML>

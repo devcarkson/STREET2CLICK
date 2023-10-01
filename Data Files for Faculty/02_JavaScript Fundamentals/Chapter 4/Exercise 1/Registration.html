@@ -1,0 +1,234 @@
+<HTML>
+<HEAD>
+<TITLE>Fast Mail Registration Form</TITLE>
+<script> 
+function validate()
+{
+    var status=true;
+    status = status && checkName();
+    status = status && checkId();
+    status = status && checkPass();
+    status = status && checkDOB();    
+    status = status && checkGender();
+    status = status && checkCountry(); 	   
+    
+    return status; 
+
+}
+
+function checkName()
+{	
+  var str = document.forms[0].name.value;
+  if (str == "")	
+  {
+     alert("Name cannot be blank, please enter your Name");
+     document.forms[0].name.focus();
+     return false;     
+  }
+  return true;
+}
+
+function checkId()
+{	
+  var str = document.forms[0].login.value;
+  if (str == "")	
+  {
+     alert("ID cannot be blank, please enter your desired ID");
+     document.forms[0].login.focus(); 
+     return false;         
+  }
+  return true;      
+}
+
+function checkPass()
+{	
+   	var pass1 = document.forms[0].passwd.value;
+        if ((pass1 == "") || (pass1.length < 6))
+	{
+		alert("The password field is either empty or less than 6 chars");
+		document.forms[0].passwd.value='';
+                document.forms[0].passwd.focus();
+		return false;
+	}
+	
+        var pass2 = document.forms[0].confirm_passwd.value;
+	if (pass1 != pass2)
+	{
+		alert("Passwords typed do not match, please re-enter your passwords.");
+       		document.forms[0].passwd.value='';
+                document.forms[0].confirm_passwd.value='';
+		return false;
+	}
+	return true;  
+}
+
+function checkDOB()
+{	
+	var month = document.forms[0].DOB_Month.value;
+        var day = document.forms[0].DOB_Day.value; 
+        var year = document.forms[0].DOB_Year.value;     
+        
+        if(month == "")
+	{
+		alert("Select a month of birth");
+		document.forms[0].DOB_Month.focus();
+		return false;	
+	}
+	if(isNaN(day))
+	{
+		alert("Enter a valid date of birth");
+		day="";
+		document.forms[0].DOB_Day.focus();
+		return false;
+	}
+	if(day<=0 || day>31 )
+	{
+		alert("Enter a valid date of birth");
+		day="";
+		document.forms[0].DOB_Day.focus();
+		return false;
+	}
+	
+        if(isNaN(year))
+	{
+		alert("Enter a valid year of birth");
+		year="";
+		document.forms[0].DOB_Year.focus();
+		return false;
+	}
+	
+	// Year Should be less than current year
+        var present_date = new Date();
+	curr_year = present_date.getYear();
+        if(parseInt(year) > parseInt(curr_year))
+	{	
+                alert("Enter a valid year of birth");
+	        document.forms[0].DOB_Year.value="";
+	        document.forms[0].DOB_Year.focus();
+		return false;
+	}
+	
+        //Date Should be valid
+        if ((year % 4) == 0)
+	{
+		var days_in_month = "312931303130313130313031";
+ 	}
+ 	else	
+	{
+
+		var days_in_month = "312831303130313130313031";
+ 	}
+        
+        var monthday = days_in_month.substring(2*(month-1),2*month);
+        if (parseInt(day)>parseInt(monthday))
+	{
+	   alert ("The date of birth entered is invalid.");
+	   return false;
+	}
+	return true; 
+}
+
+function checkGender()
+{	
+  var str = document.forms[0].gender.value;
+  if (str == "")	
+  {
+     alert("Please select gender.");
+     document.forms[0].gender.focus();
+     return false;     
+  }
+  return true;     
+}
+
+function checkCountry()
+{	
+  var str = document.forms[0].Country.value;
+  if (str == "")	
+  {
+     alert("Country cannot be blank, please enter your Country name");
+     document.forms[0].Country.focus();
+     return false;     
+  }
+  return true;     
+}
+
+</script>
+</HEAD>
+
+<BODY bgcolor="lightyellow">
+<H1 align = center> Welcome to the Fast Mail</h1>
+<h1> 
+<FORM name="form1" method="post" action="confirm.html" onSubmit="return validate()">
+<table align=center>
+<tr>
+  <td height="22">Name</td>
+  <td height="22"><B>:</B></td>
+  <td height="22"><INPUT TYPE="text" NAME="name" value="" size="20"></td>
+</tr>
+
+<tr>
+  <td height="22">Choose your FastMail ID</td>
+  <td height="22"><B>:</B></td>
+  <td height="22"><INPUT TYPE="text" NAME="login" value="" size="20"></td>
+</tr>
+
+<tr>
+  <td height="22">Choose Password</td>
+  <td height="22"><B>:</B></td>
+  <td height="22"> <INPUT TYPE="password" NAME="passwd" value="" size="20"></td>	
+</tr>
+
+<tr>
+	<td height="22">Confirm your Password</td>
+	<td height="22"><B>:</B></td>
+	<td height="22">
+    <INPUT TYPE="password" NAME="confirm_passwd" value="" size="20"></td>
+</tr>
+<tr>
+	<td height="23">Date of Birth</td>
+	<td height="23"><B>:</B></td>
+	<td colspan=3 height="23">
+			<SELECT NAME="DOB_Month"><option label="Month" value="">Month</option>
+				<option label="Jan" value="1">Jan</option>
+				<option label="Feb" value="2">Feb</option>
+				<option label="Mar" value="3">Mar</option>
+				<option label="Apr" value="4">Apr</option>
+				<option label="May" value="5">May</option>
+				<option label="Jun" value="6">Jun</option>
+				<option label="Jul" value="7">Jul</option>
+				<option label="Aug" value="8">Aug</option>
+				<option label="Sep" value="9">Sep</option>
+				<option label="Oct" value="10">Oct</option>
+				<option label="Nov" value="11">Nov</option>
+				<option label="Dec" value="12">Dec</option>
+			</SELECT>
+			<INPUT TYPE="text" NAME="DOB_Day" size="2" value="dd" onfocus="Javascript : if(this.value=='dd') this.value='';">
+			<INPUT TYPE="text" NAME="DOB_Year" size="4" value="yyyy" onfocus="Javascript : if(this.value=='yyyy') this.value='';">
+	</td>
+<tr>
+	<td height="23">Gender</td>
+	<td height="23"><B>:</B></td>
+	<td height="23"> 
+		<SELECT NAME="gender">
+			<Option value="" selected>Select
+			</Option><Option value="m">Male
+			<Option value="f" >Female
+		</SELECT>
+	</td>
+</tr>
+<tr>
+	<td height="23">Country</td>
+	<td height="23"><B>:</B></td>
+	<td height="23"><INPUT TYPE="text" NAME="Country" size="20">
+</tr>
+<tr>
+   <td height="30">  </td> <td height="30"></td> <td height="30"></td></tr>
+<tr>
+	<td height="26"><input type="submit" value="Register Me"></td>
+	<td height="26"> </td>
+	<td height="26"><INPUT TYPE="reset" value="Cancel"></td>
+</tr> 
+</table>
+</FORM>
+</body>
+</html>

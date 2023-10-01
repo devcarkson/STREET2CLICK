@@ -1,0 +1,42 @@
+<HTML>
+<HEAD>
+<TITLE> Demo</Title>
+<SCRIPT LANGUAGE= "JavaScript">
+<!--
+var images;
+function dopreload()
+{
+	images = new Array('aboutus.gif','vision.gif','achieve.gif','partners.gif','contacts.gif','aboutus_r.gif','vision_r.gif','achieve_r.gif','partners_r.gif','contacts_r.gif');
+   preload(images);
+
+}
+
+function preload(img) {
+
+   for(var i = 0; i < img.length; i++)
+	
+   {
+ 	var im = new Image();
+	im.src = img[i];
+   }
+}
+function over(a)
+{
+	document.images[a].src=images[a+5];
+}
+function out(a)
+{
+	document.images[a].src=images[a];
+}
+//-->
+</SCRIPT>
+</HEAD>
+<BODY onLoad=dopreload()>
+<h1 align="center">MagnifyMaze, Inc.</h1>
+<P><A HREF= "About.htm"> <IMG SRC="aboutus.gif" onMouseOver="over(0)" onMouseOut="out(0)" width="200" height="43"></A>
+<P><A HREF="Vision.htm"><IMG SRC="vision.gif" onMouseOver="over(1)" onMouseOut="out(1)" width="200" height="45" ></A>
+<P><A HREF="Achievements.htm"><IMG SRC="achieve.gif" onMouseOver="over(2)" onMouseOut="out(2)" width="200" height="45" ></A>
+<P><A HREF="Partners.htm"> <IMG SRC="partners.gif" onMouseOver="over(3)" onMouseOut="out(3)" width="200" height="45" ></A>
+<P><A HREF="Contacts.htm"><IMG SRC="contacts.gif" onMouseOver="over(4)" onMouseOut="out(4)" width="200" height="45" ></A>
+</BODY>
+</HTML>

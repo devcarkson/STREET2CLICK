@@ -1,0 +1,67 @@
+<html>
+<head>
+<title>New Tech Book Store</title>
+<SCRIPT LANGUAGE= "JavaScript">
+<!--
+function BookDetails(i)
+{
+  detail_text="<HTML><HEAD><TITLE>Book Details</TITLE><BODY>\n";
+  switch(i)
+  {
+     case 1:     
+     detail_text=detail_text+"<CENTER>\n<h3>A Journey Through Every Country in the World</h3>\n";
+     detail_text=detail_text+"<Table><tr><td><b>Auther:</b></td><td>Roz Hopkins</td></tr>\n";
+     detail_text=detail_text+"<tr><td><b>Price:</b></td><td>$44.49</td></tr></table>\n";
+     break;
+     
+     case 2:     
+     detail_text=detail_text+"<CENTER>\n<h3>A Travel Book</h3>\n";
+     detail_text=detail_text+"<Table><tr><td><b>Auther:</b></td><td>Fred Martin</td></tr>\n";
+     detail_text=detail_text+"<tr><td><b>Price:</td><td>$27.85</td></tr></table>\n";
+     break;
+     
+     case 3:     
+detail_text=detail_text+"<CENTER>\n<h3>The Mountain Travel Book of Treks, Outings & Expeditions</h3>\n";
+detail_text=detail_text+"<Table><tr><td><b>Auther:</b></td><td>Inc Mountain Travel</td></tr>\n";
+     detail_text=detail_text+"<tr><td><b>Price:</td><td>$62.23</td></tr></table>\n";
+     break;  	     	 
+
+     default:
+     break;       
+  }
+  detail_text=detail_text+"</body></HTML>";
+  detail_win=window.open('','BookDetail','width=300,height=120');
+  detail_win.document.write(detail_text); 
+
+}
+//-->
+</SCRIPT>
+
+</head>
+<body>
+<h2><Font color= blue>The best travel books</font></h3> 
+<table border="1" cellpadding="0" cellspacing="0" width="60%">
+  <tr>
+    <td width="20%"><b>S. No.</b></td>
+    <td width="60%"><b>Book Title</b></td>
+    <td width="20%"><b>Details</b></td>
+  </tr>
+  <tr>
+    <td width="20%">1.</td>
+    <td width="60%">A Journey Through Every Country in the World</td>
+    <td width="20%"><input type="button" value="Click" onClick="BookDetails(1)"></td>
+  </tr>
+  <tr>
+    <td width="20%">2.</td>
+    <td width="60%">A Travel Book</td>
+    <td width="20%"><input type="button" value="Click" onClick="BookDetails(2)"></td>
+  </tr>
+  <tr>
+    <td width="20%">3.</td>
+    <td width="60%">The Mountain Travel Book of Treks, Outings & Expeditions</td>
+    <td width="20%"><input type="button" value="Click" onClick="BookDetails(3)"></td>
+  </tr>
+  
+</table>
+</body>
+</html>

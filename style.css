@@ -1,0 +1,23 @@
+.home-bg{
+    background-image: url(/images/carousel-1.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+ul{
+    color: blueviolet;
+}
+.test p{
+    background-color: rgb(210, 100, 190, 0.5);
+}
+
+.body-bg{
+    background-color: burlywood;
+}
+
+.logo1{
+    color: pink;
+}
+
+.logo2{
+    color: brown;
+}

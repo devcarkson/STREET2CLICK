@@ -1,0 +1,42 @@
+<HTML>
+<HEAD>
+
+<SCRIPT language="JavaScript">
+/*  Retrieve the cookie */
+function GetCookie (c_name) 
+{
+  var c_arg = c_name + "=";
+  var c_alen = c_arg.length;
+  var c_len = document.cookie.length;
+  var x = 0;
+  while (x < c_len)
+  {
+    var y = x + c_alen;
+    if (document.cookie.substring(x, y) == c_arg)
+      return getCookieVal (y);
+    x = document.cookie.indexOf(" ", x) + 1;
+    if (x == 0) break; 
+  }
+  return null;
+}
+
+/* Retreiving the cookie value function */
+
+function getCookieVal (offset) {
+  var c_endstr = document.cookie.indexOf (";", offset);
+  if (c_endstr == -1)
+    c_endstr = document.cookie.length;
+  return unescape(document.cookie.substring(offset, c_endstr));
+}
+</SCRIPT>
+</HEAD>
+<BODY>
+Thanks for submitting your question!
+<SCRIPT language="JavaScript">
+document.write(GetCookie("FAQ")); 
+</SCRIPT>
+<BR>
+<BR>
+<A HREF="homepage.html">Click here to go back to Home Page</A>
+</BODY>
+</HTML>

@@ -1,0 +1,88 @@
+<HTML>
+<HEAD>
+<SCRIPT language="JavaScript">
+<!--
+	
+	function initializeStr() 
+	{
+		this.length = initializeStr.arguments.length;
+		for (var i = 0; i < this.length; i++)
+		 {
+			this[i] = initializeStr.arguments[i];
+		 }
+	}
+
+var disptext = "Hurry! The first 100 tickets will get amazing discounts!";
+var dispspeed = 1000;
+var y = 0;
+
+var disptextcolor = new initializeStr(
+"maroon", 
+"blue", 
+"aquamarine",
+"red"
+);
+if(navigator.appName == "Netscape") {
+document.write('<layer id="c"><center>'+disptext+'</center></layer><br>');
+}
+
+if (navigator.appVersion.indexOf("MSIE") != -1){
+document.write('<div id="c"><center>'+disptext+'</center></div>');
+}
+function changecolor(){ 
+if(navigator.appName == "Netscape") {
+document.c.document.write('<center><font color="'+disptextcolor[y]);
+document.c.document.write('">'+disptext+'</font></center>');
+document.c.document.close();
+}
+else 
+
+if (navigator.appVersion.indexOf("MSIE") != -1)
+{
+document.all.c.style.color = disptextcolor[y];
+}
+(y < disptextcolor.length-1) ? y++ : y = 0;
+}
+setInterval("changecolor()",1000); 
+// Displaying status bar message
+var words = "Enjoy...Have Fun";
+var buffer1="                        ";
+var buffer2="                        ";
+var message1=buffer1+words+buffer2;
+var dir = "left";
+var speed = 70;
+
+function displayStatusBarMsg()
+
+{
+
+if (dir == "left")
+
+  {
+
+    message2=message1.substring(2,message1.length)+"  ";
+    window.status=message2;
+    setTimeout("displayStatusBarMsg();",speed);
+    message1=message2;
+    if (message1.substring(0,1) == "E") dir="right";
+
+  }
+
+else
+
+  {
+
+    message2="  "+message1.substring(0,message1.length-2);
+    window.status=message2;
+    setTimeout("displayStatusBarMsg();",speed);
+    message1=message2;
+    if (message1.substring(message1.length-1,message1.length) == "n") 
+dir="left";
+
+  }
+}
+</SCRIPT>
+<BODY onload=displayStatusBarMsg()>
+&nbsp;
+</BODY>
+</HTML> 

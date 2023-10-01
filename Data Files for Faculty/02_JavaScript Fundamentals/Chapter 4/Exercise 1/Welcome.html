@@ -1,0 +1,34 @@
+<html>
+<head>
+<title>Welcome to Fast Mail</title>
+</head>
+
+<body bgcolor="lightyellow">
+<script>
+function getCookieValue(name) {
+var nameEQ = name + "=";
+var ca = document.cookie.split(';');
+for(var i=0;i < ca.length;i++)
+ {
+   var c = ca[i];
+   while (c.charAt(0)==' ') c = c.substring(1,c.length);
+   if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+ }
+ return null;
+}
+var User = getCookieValue("User");
+if(User!=null)
+{
+document.write("<h3 Algin='left'> Welcome: "+User+"</h3>");
+}
+else
+{
+document.write("<h3 Algin='left'> Welcome: User</h3>");
+}
+</script>
+
+<br><br><br><br>
+<h3 align="center">Click to view your inbox: <input type="button" value="INBOX"></h3> 
+
+</body>
+</html>

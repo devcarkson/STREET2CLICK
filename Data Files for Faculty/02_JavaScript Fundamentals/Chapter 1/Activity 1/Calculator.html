@@ -1,0 +1,75 @@
+<HTML>
+<HEAD>
+<SCRIPT language="JavaScript">
+function fnCall()
+{
+	var nResult;
+	var nFirst, nSecond;
+	nFirst=parseInt(nFirstEntry.value);
+	nSecond=parseInt(nSecondEntry.value);
+	nResult=fnAdd(nFirst,nSecond);
+	operation.value=nResult;
+}
+
+function subCall()
+{
+	var nResult;
+	var nFirst, nSecond;
+	nFirst=parseInt(nFirstEntry.value);
+	nSecond=parseInt(nSecondEntry.value);
+	nResult=fnSubs(nFirst,nSecond);
+	operation.value=nResult;
+}
+function multCall()
+{
+	var nResult;
+	var nFirst, nSecond;
+	nFirst=parseInt(nFirstEntry.value);
+	nSecond=parseInt(nSecondEntry.value);
+	nResult=fnmult(nFirst,nSecond);
+	operation.value=nResult;
+}
+function divCall()
+{
+	var nResult;
+	var nFirst, nSecond;
+	nFirst=parseInt(nFirstEntry.value);
+	nSecond=parseInt(nSecondEntry.value);
+	nResult=fndiv(nFirst,nSecond);
+	operation.value=nResult;
+}
+
+function fnAdd(nFirst,nSecond)
+{
+   return nFirst+nSecond;
+}
+
+function fnSubs(nFirst,nSecond)
+{
+	return nFirst-nSecond;
+}
+
+function fnmult(nFirst,nSecond)
+{
+	return nFirst*nSecond;
+}
+
+function fndiv(nFirst,nSecond)
+{
+	return nFirst/nSecond;
+}
+</SCRIPT>
+</HEAD>
+<BODY>
+      Enter your First number:
+      <INPUT type="text" name="nFirstEntry"><BR>
+      Enter your Second number:
+      <INPUT type="text" name="nSecondEntry"><BR>
+      Answer:
+      <INPUT type="text" name="operation" value=" "><BR>
+      <INPUT type="button" name="Add" value=" + " onClick="fnCall()">
+      <INPUT type="button" name="Subtract" value=" - " onClick="subCall()">
+      <INPUT type="button" name="multiply" value=" * " onClick="multCall()">
+      <INPUT type="button" name="divide" value=" / " onClick="divCall()">
+</BODY>
+</HTML>

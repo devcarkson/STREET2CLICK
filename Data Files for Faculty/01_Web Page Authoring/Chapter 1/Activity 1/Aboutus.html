@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AboutUs</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body class="body-bg">
+   <main>
+    <div class="logo">
+        <h1 class="logo1">LOGO</h1>
+        <h1 class="logo2">2LOGO</h1>
+    </div>
+    <div class="navbar">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Blog</a></li>
+        </ul>
+    </div>
+
+    <div class="img-con">
+        <img src="/images/close-up-african-american-hand-holding-stethoscope.jpg" alt="my-image" >
+    </div>
+
+    <style>
+        .img-con img{
+            width: 30%;
+            border: 3px dotted black;
+            height: 100%;
+        }
+        ul{
+    
+            background-image: url(/images/after.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+    </style>
+
+    <h2>Image Map</h2>
+    <div class="img1-map">
+        <img src="/images/carousel-2.jpg" alt="" width="20%" usemap="#image-map">
+        <map name="image-map">
+            <area shape="rect" coords="50,50, 200, 200" href="/carkson.html" alt="carkson.html">
+            <area shape="rect" coords="100,150, 50, 200" href="/index.html" alt="carkson.html">
+            <area shape="circle" coords="200,50,300" href="/index.html" alt="index">
+            <area shape="poly" coords="400,50,450,150,350,150" href="/web_pages/index.html" alt="2index">
+        </map>
+    </div>
+
+    <div>
+        <h1>Click anywhere on the image to go to a website:</h1>
+
+        <a href="https://www.google.com">
+            <img src="/images/carousel-1.jpg" alt="Clickable Image" usemap="#img-map" width="50%">
+        </a>
+    
+        <!-- Define a single rectangular area that covers the entire image -->
+        
+    </div>
+    
+   </main>
+
+</body>
+</html>
